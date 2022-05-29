@@ -2,6 +2,7 @@ package com.moringaschool.musicmatch;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,11 +20,14 @@ public class MainActivity extends AppCompatActivity {
 
         mButtontoptenartists = (Button)findViewById(R.id.buttontoptenartists);
 //      implement a toast msg
+//        implement intent tot take us to new page
 
         mButtontoptenartists.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Hello World!", Toast.LENGTH_LONG).show();
+//                Toast.makeText(MainActivity.this, "Hello World!", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MainActivity.this, ArtistsActivity.class);
+                startActivity(intent);
             }
         });
     }

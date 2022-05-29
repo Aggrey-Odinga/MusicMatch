@@ -10,12 +10,16 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 //    declare button view variable
-    private Button mButtontoptenartists;
+//    view binding to locate button easily
+//    private Button mButtontoptenartists;
+    @BindView(R.id.buttontoptenartists) Button mButtontoptenartists;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        implement butterknife
+        ButterKnife.bind(this);
 //        setting the variable
 
         mButtontoptenartists = (Button)findViewById(R.id.buttontoptenartists);

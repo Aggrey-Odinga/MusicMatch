@@ -21,7 +21,7 @@ public class ArtistsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_artists);
 
         mListView = (ListView) findViewById(R.id.listView);
-//        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, restaurants);
-//        mListView.setAdapter(adapter);
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, Artists);
+        mListView.setAdapter(adapter);
     }
 }

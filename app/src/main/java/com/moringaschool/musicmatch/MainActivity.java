@@ -18,12 +18,13 @@ public class MainActivity extends AppCompatActivity {
 //        setting the variable
 
         mButtontoptenartists = (Button)findViewById(R.id.buttontoptenartists);
+//      implement a toast msg
+
         mButtontoptenartists.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Hello World!", Toast.LENGTH_LONG).show();
             }
         });
-    }
     }
 }

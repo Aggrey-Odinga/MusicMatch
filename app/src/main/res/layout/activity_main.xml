@@ -11,14 +11,39 @@
         android:layout_marginTop="35dp"
         android:text="MusicMatch"
         android:textSize="30dp"
-        android:textColor="@android:color/holo_red_dark"/>
+        android:textColor="#E61616"/>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttontoptenartists"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_marginTop="150dp"
         android:layout_centerHorizontal="true"
-        android:text="List of Top 10 Artists in Kenya" />
+        android:background="#F30B0B"
+        android:text="List of Top 10 Artists in Kenya"
+        android:textColor="#ED1111" />
+
+    <Button
+        android:id="@+id/buttontoptensongs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
+        android:layout_centerHorizontal="true"
+        android:background="#F30B0B"
+        android:text="List of Top Trending Songs in Kenya"
+        android:textColor="#ED1111" />
+
+    <Button
+        android:id="@+id/buttonalbums"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:layout_centerHorizontal="true"
+        android:background="#F30B0B"
+        android:text="List of Top artist album songs "
+        android:textColor="#ED1111" />
+
+
+
 
 </RelativeLayout>

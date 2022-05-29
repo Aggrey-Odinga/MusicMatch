@@ -17,7 +17,7 @@
         android:layout_centerInParent="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="35dp"
-        android:text="Top Ten Artists in Kenya Spotify: "
+        android:text="Most streamed Kenyan artists Spotify: "
         android:textSize="35sp"
         />
 

@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
 //    declare button view variable
 //    view binding to locate button easily
@@ -22,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 //        setting the variable
 
-        mButtontoptenartists = (Button)findViewById(R.id.buttontoptenartists);
+//        mButtontoptenartists = (Button)findViewById(R.id.buttontoptenartists);
 //      implement a toast msg
 //        implement intent tot take us to new page
 

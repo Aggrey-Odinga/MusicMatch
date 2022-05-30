@@ -46,7 +46,7 @@
         android:layout_marginTop="260dp"
         android:background="#FF25B6"
         android:fontFamily="@font/poppins"
-        android:text="List of Top Trending Songs in Kenya"
+        android:text="Top Trending Songs in Kenya"
         android:textColor="#F3000000" />
 
     <Button
@@ -54,10 +54,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="380dp"
         android:background="#FF25B6"
         android:fontFamily="@font/poppins"
         android:text="List of Top artist album songs "
+        android:textColor="#F3000000" />
+
+    <EditText
+        android:id="@+id/locationEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonlisttrendingsongs"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:background="#C677F1"
+        android:hint="Enter Country"
+        android:padding="5dp" />
+
+    <Button
+        android:id="@+id/buttonlisttrendingsongs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:background="#FF25B6"
+        android:fontFamily="@font/poppins"
+        android:text="Top Trending Songs in Kenya "
         android:textColor="#F3000000" />
 
 

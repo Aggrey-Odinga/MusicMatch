@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/layout/activity_artists.xml" value="0.1276595744680851" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_songs.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/activity_top_trending.xml" value="0.1" />
       </map>
     </option>

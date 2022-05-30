@@ -19,8 +19,8 @@ import butterknife.ButterKnife;
 
 public class ArtistsActivity extends AppCompatActivity implements View.OnClickListener{
 
-    @BindView(R.id.toptentrending)
-    Button mtoptentrending;
+    @BindView(R.id.topTenTrendingButton)
+    Button mTopTenTrendingButton;
     @BindView(R.id.countryEditText)
     EditText mcountryEditText;
     @BindView(R.id.listView)
@@ -45,7 +45,7 @@ public class ArtistsActivity extends AppCompatActivity implements View.OnClickLi
         ButterKnife.bind(this);
 
 
-        mtoptentrending.setOnClickListener(this);
+        mTopTenTrendingButton.setOnClickListener(this);
         ArtistsArrayAdapter adapter = new ArtistsArrayAdapter(this, android.R.layout.simple_list_item_1,Artists,Songs);
 //        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, Artists);
         mListView.setAdapter(adapter);
@@ -62,7 +62,7 @@ public class ArtistsActivity extends AppCompatActivity implements View.OnClickLi
     };
     @Override
     public void onClick(View v) {
-        if(v == mtoptentrending) {
+        if(v == mTopTenTrendingButton) {
             String country = mcountryEditText.getText().toString();
             Intent intent = new Intent(ArtistsActivity.this, TopTrendingActivity.class);
             intent.putExtra("country", country);

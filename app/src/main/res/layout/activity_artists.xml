@@ -29,4 +29,25 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
+    <EditText
+        android:id="@+id/countryEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/toptentrending"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:background="#021B1A"
+        android:hint="Enter Country Name"
+        android:padding="5dp" />
+    <Button
+        android:id="@+id/toptentrending"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/black"
+        android:fontFamily="@font/poppins"
+        android:text="LIST OF TOP TEN TRENDING SONGS IN KENYA"
+        android:textColor="@color/white" />
+
 </RelativeLayout>

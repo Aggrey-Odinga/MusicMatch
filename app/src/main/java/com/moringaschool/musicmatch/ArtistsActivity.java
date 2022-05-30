@@ -2,11 +2,14 @@ package com.moringaschool.musicmatch;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,9 +17,14 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ArtistsActivity extends AppCompatActivity {
+public class ArtistsActivity extends AppCompatActivity implements View.OnClickListener{
 
-    @BindView(R.id.listView) ListView mListView;
+    @BindView(R.id.toptentrending)
+    Button mtoptentrending;
+    @BindView(R.id.countryEditText)
+    EditText mcountryEditText;
+    @BindView(R.id.listView)
+    ListView mListView;
 
     private String [] Artists = new String[] {"Sauti Sol",
             "Nviiri The Storyteller", "Otile Brown",
@@ -37,6 +45,7 @@ public class ArtistsActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
 
+        mtoptentrending.setOnClickListener(this);
         ArtistsArrayAdapter adapter = new ArtistsArrayAdapter(this, android.R.layout.simple_list_item_1,Artists,Songs);
 //        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, Artists);
         mListView.setAdapter(adapter);
@@ -50,5 +59,17 @@ public class ArtistsActivity extends AppCompatActivity {
             }
         });
 
-        };
+    };
+    @Override
+    public void onClick(View v) {
+        if(v == mtoptentrending) {
+            String country = mcountryEditText.getText().toString();
+            Intent intent = new Intent(ArtistsActivity.this, TopTrendingActivity.class);
+            intent.putExtra("country", country);
+            startActivity(intent);
+        }
     }
+
+
+}
+

@@ -33,8 +33,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     @Override
     public void onClick(View v) {
-//                Toast.makeText(MainActivity.this, "Hello World!", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(MainActivity.this, ArtistsActivity.class);
-        startActivity(intent);
+        if(v == mButtontoptenartists){
+            //                Toast.makeText(MainActivity.this, "Hello World!", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(MainActivity.this, ArtistsActivity.class);
+            startActivity(intent);
+        }
     }
 }

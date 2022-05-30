@@ -11,7 +11,7 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 //    declare button view variable
 //    view binding to locate button easily
 //    private Button mButtontoptenartists;
@@ -29,13 +29,12 @@ public class MainActivity extends AppCompatActivity {
 //      implement a toast msg
 //        implement intent tot take us to new page
 
-        mButtontoptenartists.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        mButtontoptenartists.setOnClickListener(this);
+    }
+    @Override
+    public void onClick(View v) {
 //                Toast.makeText(MainActivity.this, "Hello World!", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(MainActivity.this, ArtistsActivity.class);
-                startActivity(intent);
-            }
-        });
+        Intent intent = new Intent(MainActivity.this, ArtistsActivity.class);
+        startActivity(intent);
     }
 }

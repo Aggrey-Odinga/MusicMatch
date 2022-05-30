@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //                Toast.makeText(MainActivity.this, "Hello World!", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(MainActivity.this, ArtistsActivity.class);
             startActivity(intent);
+
         }
+
     }
 }

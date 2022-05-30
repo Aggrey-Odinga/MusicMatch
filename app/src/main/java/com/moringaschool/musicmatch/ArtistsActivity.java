@@ -46,6 +46,7 @@ public class ArtistsActivity extends AppCompatActivity implements View.OnClickLi
 
 
         mTopTenTrendingButton.setOnClickListener(this);
+
         ArtistsArrayAdapter adapter = new ArtistsArrayAdapter(this, android.R.layout.simple_list_item_1,Artists,Songs);
 //        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, Artists);
         mListView.setAdapter(adapter);

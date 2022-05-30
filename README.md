@@ -28,4 +28,4 @@ To set up this project:
 
 - Email me at: aggreyodinga@gmail.com
 
-## [License](https://github.com/Aggrey-Odinga/Wildlife/blob/main/LICENSE)
+## [License](https://github.com/Aggrey-Odinga/MusicMatch/blob/main/LICENSE)

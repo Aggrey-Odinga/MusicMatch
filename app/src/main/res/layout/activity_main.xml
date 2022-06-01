@@ -26,61 +26,29 @@
         android:textColor="#F10D83"
         android:textSize="40dp" />
 
-    <Button
-        android:id="@+id/buttontoptenartists"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
-        android:background="#FF25B6"
-        android:fontFamily="@font/poppins"
-        android:text="List of Top 10 Artists in Kenya"
-        android:textColor="#F3000000"
-        android:textSize="15dp"/>
 
-    <Button
-        android:id="@+id/buttontoptensongs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="260dp"
-        android:background="#FF25B6"
-        android:fontFamily="@font/poppins"
-        android:text="Top Trending Songs in Kenya"
-        android:textColor="#F3000000" />
-
-    <Button
-        android:id="@+id/buttonalbums"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="380dp"
-        android:background="#FF25B6"
-        android:fontFamily="@font/poppins"
-        android:text="List of Top artist album songs "
-        android:textColor="#F3000000" />
 
     <EditText
-        android:id="@+id/locationEditText"
+        android:id="@+id/countryEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/buttonlisttrendingsongs"
+        android:layout_above="@+id/buttontoptenartists"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
-        android:background="#C677F1"
+        android:background="#D3F8F8"
         android:hint="Enter Country"
         android:padding="5dp" />
-
     <Button
-        android:id="@+id/buttonlisttrendingsongs"
+        android:id="@+id/buttontoptenartists"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:background="#FF25B6"
         android:fontFamily="@font/poppins"
-        android:text="Top Trending Songs in Kenya "
-        android:textColor="#F3000000" />
+        android:text="List of Top 10 Artists in a Country"
+        android:textColor="#F3000000"
+        android:textSize="15dp"/>
 
 
 

@@ -17,12 +17,10 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ArtistsActivity extends AppCompatActivity implements View.OnClickListener{
+public class ArtistsActivity extends AppCompatActivity {
 
-    @BindView(R.id.topTenTrendingButton)
-    Button mTopTenTrendingButton;
-    @BindView(R.id.countryEditText)
-    EditText mcountryEditText;
+    @BindView(R.id.locationTextView)
+    TextView mLocationTextView;
     @BindView(R.id.listView)
     ListView mListView;
 
@@ -45,7 +43,6 @@ public class ArtistsActivity extends AppCompatActivity implements View.OnClickLi
         ButterKnife.bind(this);
 
 
-        mTopTenTrendingButton.setOnClickListener(this);
 
         ArtistsArrayAdapter adapter = new ArtistsArrayAdapter(this, android.R.layout.simple_list_item_1,Artists,Songs);
 //        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, Artists);
@@ -60,17 +57,11 @@ public class ArtistsActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
 
-    };
-    @Override
-    public void onClick(View v) {
-        if(v == mTopTenTrendingButton) {
-            String country = mcountryEditText.getText().toString();
-            Intent intent = new Intent(ArtistsActivity.this, TopTrendingActivity.class);
-            intent.putExtra("country", country);
-            startActivity(intent);
-        }
-    }
+        Intent intent = getIntent();
+        String country = intent.getStringExtra("country");
+        mLocationTextView.setText("Here are the top ten Artists in: " + country);
 
+    };
 
 }
 

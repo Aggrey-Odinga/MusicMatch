@@ -14,11 +14,13 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    @BindView(R.id.buttontoptenartists) Button mButtontoptenartists;
-    @BindView(R.id.locationEditText)
-    EditText mLocationEditText;
-    @BindView(R.id.buttonlisttrendingsongs)
-    Button mbuttonlisttrendingsongs;
+
+    @BindView(R.id.countryEditText)
+    EditText mcountryEditText;
+    @BindView(R.id.buttontoptenartists)
+    Button mButtontoptenartists;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,18 +29,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ButterKnife.bind(this);
 
         mButtontoptenartists.setOnClickListener(this);
-        mbuttonlisttrendingsongs.setOnClickListener(this);
+
     }
     @Override
     public void onClick(View v) {
-        if(v == mbuttonlisttrendingsongs) {
-            String location = mLocationEditText.getText().toString();
-            Intent intent = new Intent(MainActivity.this, SongsActivity.class);
-            intent.putExtra("location", location);
-            startActivity(intent);
-        }
         if(v == mButtontoptenartists){
-             Intent intent = new Intent(MainActivity.this, ArtistsActivity.class);
+            String country = mcountryEditText.getText().toString();
+            Intent intent = new Intent(MainActivity.this, ArtistsActivity.class);
+            intent.putExtra("country", country);
             startActivity(intent);
         }
     }

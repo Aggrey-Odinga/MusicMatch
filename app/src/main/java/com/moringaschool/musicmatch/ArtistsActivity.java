@@ -28,12 +28,12 @@ public class ArtistsActivity extends AppCompatActivity {
             "Nviiri The Storyteller", "Otile Brown",
             "Nyashinski", "Bensoul", "Wakadinali",
             "BURUKLYN BOYZ", "H_art the Band",
-            "Mejja", "Khaligraph Jones"};
+            "Mejja", "Khaligraph Jones","Bien", "Nikita Kering", "NDOVU KUU","Nikita Kering", "Nikita Kering", "Nikita Kering"};
     private String[] Songs = new String[] {
       "Short n Sweet","Pombe Sigara",
             "Jeraha","Mungu Pekee","Nakufa",
             "Geri Inengi","Shifter","Nikikutazama",
-            "Siskii","The O.G"
+            "Siskii","The O.G", " Niko Sawa", "Ex", "NDOVU NI KUU", "Ex", "Ex", "Ex"
     };
 
     @Override

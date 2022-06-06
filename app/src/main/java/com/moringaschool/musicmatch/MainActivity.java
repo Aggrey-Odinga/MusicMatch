@@ -15,8 +15,8 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
 
-    @BindView(R.id.countryEditText)
-    EditText mcountryEditText;
+    @BindView(R.id.artistEditText)
+    EditText martistEditText;
     @BindView(R.id.buttontoptenartists)
     Button mButtontoptenartists;
 
@@ -34,9 +34,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if(v == mButtontoptenartists){
-            String country = mcountryEditText.getText().toString();
+            String artist = martistEditText.getText().toString();
             Intent intent = new Intent(MainActivity.this, ArtistsActivity.class);
-            intent.putExtra("country", country);
+            intent.putExtra("artist", artist);
             startActivity(intent);
         }
     }

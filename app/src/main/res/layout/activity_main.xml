@@ -29,14 +29,14 @@
 
 
     <EditText
-        android:id="@+id/countryEditText"
+        android:id="@+id/artistEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/buttontoptenartists"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
         android:background="#D3F8F8"
-        android:hint="Enter Country"
+        android:hint="Artist Name"
         android:padding="5dp" />
     <Button
         android:id="@+id/buttontoptenartists"
@@ -46,7 +46,7 @@
         android:layout_alignParentBottom="true"
         android:background="#FF25B6"
         android:fontFamily="@font/poppins"
-        android:text="List of Top 10 Artists in a Country"
+        android:text="List of Top 10 songs by an Artists"
         android:textColor="#F3000000"
         android:textSize="15dp"/>
 

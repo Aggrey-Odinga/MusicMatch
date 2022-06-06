@@ -58,8 +58,8 @@ public class ArtistsActivity extends AppCompatActivity {
         });
 
         Intent intent = getIntent();
-        String country = intent.getStringExtra("country");
-        mLocationTextView.setText("Here are the top ten Artists in: " + country);
+        String artist = intent.getStringExtra("artist");
+        mLocationTextView.setText("Here are the top ten songs of: " + artist);
 
     };
 

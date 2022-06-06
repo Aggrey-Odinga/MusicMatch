@@ -15,6 +15,12 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    //include musixmatch-api-key in the build
+
+    buildTypes.each {
+        it.buildConfigField 'String', 'API_KEY', ApiKey
+    }
+
     buildTypes {
         release {
             minifyEnabled false

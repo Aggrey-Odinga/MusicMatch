@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
 
 public class ArtistsActivity extends AppCompatActivity {
 
@@ -60,6 +61,11 @@ public class ArtistsActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String artist = intent.getStringExtra("artist");
         mLocationTextView.setText("Here are the top ten songs of: " + artist);
+
+
+        MusicMatchApi client = MusicMatchClient.getClient();
+
+        Call<TrackSearchResponse> call = client.getTracks(artist);
 
     };
 

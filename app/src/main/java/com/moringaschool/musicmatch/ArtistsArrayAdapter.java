@@ -19,7 +19,7 @@ public class ArtistsArrayAdapter extends ArrayAdapter {
     @Override
     public Object getItem(int position){
         Track track = mTracks.get(position);
-        return String.format("%s \nGreatest Hit: %s", track.getTrack().getArtistName(), track.getTrack().getTrackName());
+        return String.format("%s \nName of Track: %s", track.getTrack().getArtistName(), track.getTrack().getTrackName());
     }
 
     @Override

@@ -3,8 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MainActivity"
-    android:background="#000000">
+    android:background="#000000"
+    android:paddingTop="20dp"
+    tools:context=".ui.MainActivity">
 
 
     <ImageView
@@ -22,12 +23,12 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="165dp"
-        android:layout_marginEnd="165dp"
+        android:layout_marginEnd="164dp"
         android:layout_marginBottom="29dp"
         android:background="#FF25B6"
         android:fontFamily="@font/poppins"
-        android:text="Get Info"
         android:onClick="onLaunchWebPagebuttonClicked"
+        android:text="Get Info On Api"
         android:textColor="#F3000000"
         android:textSize="15dp" />
 
@@ -43,7 +44,6 @@
         android:textSize="40dp" />
 
 
-
     <EditText
         android:id="@+id/artistEditText"
         android:layout_width="wrap_content"
@@ -54,19 +54,18 @@
         android:background="#D3F8F8"
         android:hint="Artist Name"
         android:padding="5dp" />
+
     <Button
         android:id="@+id/buttontoptenartists"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:background="#FF25B6"
         android:fontFamily="@font/poppins"
         android:text="List of Top 10 songs by an Artists"
         android:textColor="#F3000000"
-        android:textSize="15dp"/>
-
-
+        android:textSize="15dp" />
 
 
 </RelativeLayout>

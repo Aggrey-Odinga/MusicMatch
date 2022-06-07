@@ -3,6 +3,7 @@ package com.moringaschool.musicmatch.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,7 +23,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button mButtontoptenartists;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,5 +38,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(MainActivity.this, ArtistsActivity.class);
             intent.putExtra("artist", artist);
             startActivity(intent);
+    }
+    public void onLaunchWebPagebuttonClicked (View view) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/musixmatch/musixmatch-sdk"));
+        startActivity(intent);
     }
 }

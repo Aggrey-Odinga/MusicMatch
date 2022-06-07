@@ -7,13 +7,29 @@
     android:background="#000000">
 
 
-
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:id="@+id/imageView"
-        android:src="@drawable/background"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/background" />
+
+    <Button
+        android:id="@+id/implicitintentbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/artistEditText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="165dp"
+        android:layout_marginEnd="165dp"
+        android:layout_marginBottom="29dp"
+        android:background="#FF25B6"
+        android:fontFamily="@font/poppins"
+        android:text="Get Info"
+        android:onClick="onLaunchWebPagebuttonClicked"
+        android:textColor="#F3000000"
+        android:textSize="15dp" />
 
     <TextView
         android:layout_width="wrap_content"

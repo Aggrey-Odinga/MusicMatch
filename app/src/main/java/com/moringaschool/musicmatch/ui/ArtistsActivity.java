@@ -14,8 +14,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.moringaschool.musicmatch.ArtistsArrayAdapter;
-import com.moringaschool.musicmatch.Constants;
+import com.moringaschool.musicmatch.adapters.ArtistsArrayAdapter;
+import com.moringaschool.musicmatch.network.Constants;
 import com.moringaschool.musicmatch.R;
 import com.moringaschool.musicmatch.models.Track;
 import com.moringaschool.musicmatch.models.TrackSearchResponse;

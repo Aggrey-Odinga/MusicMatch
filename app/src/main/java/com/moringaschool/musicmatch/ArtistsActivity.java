@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +30,10 @@ public class ArtistsActivity extends AppCompatActivity {
     TextView mLocationTextView;
     @BindView(R.id.listView)
     ListView mListView;
+    @BindView(R.id.errorTextView)
+    TextView mErrorTextView;
+    @BindView(R.id.progressBar)
+    ProgressBar mProgressBar;
     public static final String TAG = ArtistsActivity.class.getSimpleName();
 
     @Override
@@ -59,19 +64,36 @@ public class ArtistsActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<TrackSearchResponse> call, Response<TrackSearchResponse> response) {
 
+                hideProgressBar();
+                if(response.isSuccessful()){
                     List<Track> tracks = response.body().getMessage().getBody().getTrackList();
                     Log.d(TAG, String.format("Track Size %d", tracks.size()));
                     ArrayAdapter adapter
                             = new ArtistsArrayAdapter(ArtistsActivity.this, android.R.layout.simple_list_item_1, tracks);
                     mListView.setAdapter(adapter);
                 }
+                else{
+                    showFailureMessage();
+                }
+            }
+
             @Override
             public void onFailure(Call<TrackSearchResponse> call, Throwable t) {
                 Log.d(TAG, t.getMessage());
+                hideProgressBar();
+                showFailureMessage();
             }
 
         });
     };
+    private void showFailureMessage() {
+        mErrorTextView.setText("Something went wrong. Please check your Internet connection and try again later");
+        mErrorTextView.setVisibility(View.VISIBLE);
+    }
+
+    private void hideProgressBar() {
+        mProgressBar.setVisibility(View.GONE);
+    }
 
 }
 

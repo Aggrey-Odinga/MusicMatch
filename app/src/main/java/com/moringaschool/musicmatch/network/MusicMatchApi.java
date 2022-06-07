@@ -1,4 +1,6 @@
-package com.moringaschool.musicmatch;
+package com.moringaschool.musicmatch.network;
+
+import com.moringaschool.musicmatch.models.TrackSearchResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

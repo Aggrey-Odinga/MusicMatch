@@ -1,5 +1,5 @@
 
-package com.moringaschool.musicmatch;
+package com.moringaschool.musicmatch.models;
 
 
 import com.google.gson.annotations.Expose;

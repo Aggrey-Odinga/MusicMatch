@@ -1,10 +1,11 @@
 
-package com.moringaschool.musicmatch;
+package com.moringaschool.musicmatch.models;
 
 import java.util.List;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.moringaschool.musicmatch.models.MusicGenre;
 
 
 public class PrimaryGenres {

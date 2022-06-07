@@ -1,7 +1,8 @@
-package com.moringaschool.musicmatch;
+package com.moringaschool.musicmatch.network;
 
-import static com.moringaschool.musicmatch.Constants.API_KEY;
 import static com.moringaschool.musicmatch.Constants.MUSIXMATCH_BASE_URL;
+
+import com.moringaschool.musicmatch.network.MusicMatchApi;
 
 import java.io.IOException;
 

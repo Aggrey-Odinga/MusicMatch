@@ -1,9 +1,10 @@
 
-package com.moringaschool.musicmatch;
+package com.moringaschool.musicmatch.models;
 
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.moringaschool.musicmatch.models.Message;
 
 
 public class TrackSearchResponse {

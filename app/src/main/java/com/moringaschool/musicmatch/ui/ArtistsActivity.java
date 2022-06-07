@@ -1,4 +1,4 @@
-package com.moringaschool.musicmatch;
+package com.moringaschool.musicmatch.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,12 +9,18 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.moringaschool.musicmatch.ArtistsArrayAdapter;
+import com.moringaschool.musicmatch.Constants;
+import com.moringaschool.musicmatch.R;
+import com.moringaschool.musicmatch.models.Track;
+import com.moringaschool.musicmatch.models.TrackSearchResponse;
+import com.moringaschool.musicmatch.network.MusicMatchApi;
+import com.moringaschool.musicmatch.network.MusicMatchClient;
 
 import java.util.List;
 

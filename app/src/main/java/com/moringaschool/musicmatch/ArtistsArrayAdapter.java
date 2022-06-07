@@ -3,6 +3,8 @@ package com.moringaschool.musicmatch;
 import android.content.Context;
 import android.widget.ArrayAdapter;
 
+import com.moringaschool.musicmatch.models.Track;
+
 import java.util.List;
 
 public class ArtistsArrayAdapter extends ArrayAdapter {

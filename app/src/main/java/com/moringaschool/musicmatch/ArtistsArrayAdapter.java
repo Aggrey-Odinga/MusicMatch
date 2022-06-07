@@ -3,26 +3,27 @@ package com.moringaschool.musicmatch;
 import android.content.Context;
 import android.widget.ArrayAdapter;
 
+import java.util.List;
+
 public class ArtistsArrayAdapter extends ArrayAdapter {
     private Context mContext;
-    private String[] mArtists;
-    private String[] mSongs;
+    private List<Track> mTracks;
 
-    public ArtistsArrayAdapter(Context mContext, int resource, String[] mArtists, String[] mSongs){
+
+    public ArtistsArrayAdapter(Context mContext, int resource, List<Track> mTracks){
         super(mContext, resource);
         this.mContext = mContext;
-        this.mArtists = mArtists;
-        this.mSongs = mSongs;
+        this.mTracks = mTracks;
+
     }
     @Override
     public Object getItem(int position){
-        String Artists = mArtists[position];
-        String Songs = mSongs[position];
-        return String.format("%s \nGreatest Hit: %s", Artists, Songs);
+        Track track = mTracks.get(position);
+        return String.format("%s \nGreatest Hit: %s", track.getTrack().getArtistName(), track.getTrack().getTrackName());
     }
 
     @Override
     public int getCount() {
-        return mArtists.length;
+        return mTracks.size();
     }
 }

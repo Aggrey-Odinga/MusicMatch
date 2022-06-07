@@ -7,6 +7,7 @@ import retrofit2.http.Query;
 public interface MusicMatchApi {
     @GET("track.search")
     Call<TrackSearchResponse> getTracks(
-            @Query("artist") String artist
+            @Query("apikey") String apikey,
+           @Query("q_artist") String artist
     );
 }

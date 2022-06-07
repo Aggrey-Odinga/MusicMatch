@@ -23,7 +23,6 @@ public class MusicMatchClient {
                         @Override
                         public Response intercept(Chain chain) throws IOException {
                             Request newRequest  = chain.request().newBuilder()
-                                    .addHeader("Authorization", API_KEY)
                                     .build();
                             return chain.proceed(newRequest);
                         }

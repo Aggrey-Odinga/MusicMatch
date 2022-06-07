@@ -2,6 +2,7 @@ package com.moringaschool.musicmatch;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,9 +15,13 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ArtistsActivity extends AppCompatActivity {
 
@@ -24,30 +29,13 @@ public class ArtistsActivity extends AppCompatActivity {
     TextView mLocationTextView;
     @BindView(R.id.listView)
     ListView mListView;
-
-    private String [] Artists = new String[] {"Sauti Sol",
-            "Nviiri The Storyteller", "Otile Brown",
-            "Nyashinski", "Bensoul", "Wakadinali",
-            "BURUKLYN BOYZ", "H_art the Band",
-            "Mejja", "Khaligraph Jones","Bien", "Nikita Kering", "NDOVU KUU","Nikita Kering", "Nikita Kering", "Nikita Kering"};
-    private String[] Songs = new String[] {
-      "Short n Sweet","Pombe Sigara",
-            "Jeraha","Mungu Pekee","Nakufa",
-            "Geri Inengi","Shifter","Nikikutazama",
-            "Siskii","The O.G", " Niko Sawa", "Ex", "NDOVU NI KUU", "Ex", "Ex", "Ex"
-    };
+    public static final String TAG = ArtistsActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_artists);
         ButterKnife.bind(this);
-
-
-
-        ArtistsArrayAdapter adapter = new ArtistsArrayAdapter(this, android.R.layout.simple_list_item_1,Artists,Songs);
-//        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, Artists);
-        mListView.setAdapter(adapter);
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -65,8 +53,24 @@ public class ArtistsActivity extends AppCompatActivity {
 
         MusicMatchApi client = MusicMatchClient.getClient();
 
-        Call<TrackSearchResponse> call = client.getTracks(artist);
+        Call<TrackSearchResponse> call = client.getTracks(Constants.API_KEY, artist);
 
+        call.enqueue(new Callback<TrackSearchResponse>() {
+            @Override
+            public void onResponse(Call<TrackSearchResponse> call, Response<TrackSearchResponse> response) {
+
+                    List<Track> tracks = response.body().getMessage().getBody().getTrackList();
+                    Log.d(TAG, String.format("Track Size %d", tracks.size()));
+                    ArrayAdapter adapter
+                            = new ArtistsArrayAdapter(ArtistsActivity.this, android.R.layout.simple_list_item_1, tracks);
+                    mListView.setAdapter(adapter);
+                }
+            @Override
+            public void onFailure(Call<TrackSearchResponse> call, Throwable t) {
+                Log.d(TAG, t.getMessage());
+            }
+
+        });
     };
 
 }

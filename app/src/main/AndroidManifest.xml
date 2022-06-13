@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.moringaschool.musicmatch">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,7 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MusicMatch"
         tools:targetApi="31">
-
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.ArtistsActivity"
             android:exported="false">

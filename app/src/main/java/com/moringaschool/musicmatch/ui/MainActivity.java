@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button mButtontoptenartists;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +32,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mButtontoptenartists.setOnClickListener(this);
 
+
     }
+
     @Override
     public void onClick(View v) {
             String artist = martistEditText.getText().toString();

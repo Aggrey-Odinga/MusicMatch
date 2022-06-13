@@ -9,21 +9,22 @@ import android.widget.TextView;
 
 import com.moringaschool.musicmatch.R;
 
-public class LoginActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
 
-    TextView createnewAccount;
+    TextView AlreadyHaveAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        createnewAccount= findViewById(R.id.createNewAccount);
+        setContentView(R.layout.activity_register);
+        AlreadyHaveAccount.findViewById(R.id.alreadyHaveAccount);
 
 
-        createnewAccount.setOnClickListener(new View.OnClickListener() {
+
+        AlreadyHaveAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+                startActivity(new Intent(RegisterActivity.this, RegisterActivity.class));
             }
         });
     }

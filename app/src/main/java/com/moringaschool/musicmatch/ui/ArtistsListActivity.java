@@ -9,14 +9,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.moringaschool.musicmatch.adapters.ArtistsArrayAdapter;
 import com.moringaschool.musicmatch.adapters.TrackListAdapter;
 import com.moringaschool.musicmatch.network.Constants;
 import com.moringaschool.musicmatch.R;
@@ -33,7 +28,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ArtistsActivity extends AppCompatActivity {
+public class ArtistsListActivity extends AppCompatActivity {
 
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
@@ -42,7 +37,7 @@ public class ArtistsActivity extends AppCompatActivity {
     TextView mErrorTextView;
     @BindView(R.id.progressBar)
     ProgressBar mProgressBar;
-    public static final String TAG = ArtistsActivity.class.getSimpleName();
+    public static final String TAG = ArtistsListActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,10 +71,10 @@ public class ArtistsActivity extends AppCompatActivity {
                 if(response.isSuccessful()){
                     List<Track> tracks = response.body().getMessage().getBody().getTrackList();
                     Log.d(TAG, String.format("Track Size %d", tracks.size()));
-                    mAdapter = new TrackListAdapter(ArtistsActivity.this, tracks);
+                    mAdapter = new TrackListAdapter(ArtistsListActivity.this, tracks);
                     mRecyclerView.setAdapter(mAdapter);
                     RecyclerView.LayoutManager layoutManager =
-                            new LinearLayoutManager(ArtistsActivity.this);
+                            new LinearLayoutManager(ArtistsListActivity.this);
                     mRecyclerView.setLayoutManager(layoutManager);
                     mRecyclerView.setHasFixedSize(true);
 

@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
             String artist = martistEditText.getText().toString();
-            Intent intent = new Intent(MainActivity.this, ArtistsActivity.class);
+            Intent intent = new Intent(MainActivity.this, ArtistsListActivity.class);
             intent.putExtra("artist", artist);
             startActivity(intent);
     }

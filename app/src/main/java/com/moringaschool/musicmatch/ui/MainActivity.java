@@ -24,6 +24,7 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private DatabaseReference mSearchedArtistReference;
+    private ValueEventListener mSearchedArtistReferenceListener;
 
     @BindView(R.id.artistEditText)
     EditText martistEditText;
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .getReference()
                 .child(Constants.FIREBASE_CHILD_SEARCHED_ARTIST);
 
-        mSearchedArtistReference.addValueEventListener(new ValueEventListener() { //attach listener
+        mSearchedArtistReferenceListener = mSearchedArtistReference.addValueEventListener(new ValueEventListener() { //attach listener
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) { //something changed!
                 for (DataSnapshot artistSnapshot : dataSnapshot.getChildren()) {
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
@@ -77,5 +79,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onLaunchWebPagebuttonClicked (View view) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/musixmatch/musixmatch-sdk"));
         startActivity(intent);
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mSearchedArtistReference.removeEventListener(mSearchedArtistReferenceListener);
     }
 }

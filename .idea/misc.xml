@@ -7,12 +7,12 @@
         <entry key="app/src/main/res/drawable/ic_baseline_security_24.xml" value="0.238" />
         <entry key="app/src/main/res/drawable/input_bg.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_artists.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_songs.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/activity_top_trending.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/artist_list_item.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/artist_list_item.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_info.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.2625" />
       </map>

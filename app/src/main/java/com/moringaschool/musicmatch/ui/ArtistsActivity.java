@@ -1,6 +1,8 @@
 package com.moringaschool.musicmatch.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 import android.content.Intent;
@@ -15,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.moringaschool.musicmatch.adapters.ArtistsArrayAdapter;
+import com.moringaschool.musicmatch.adapters.TrackListAdapter;
 import com.moringaschool.musicmatch.network.Constants;
 import com.moringaschool.musicmatch.R;
 import com.moringaschool.musicmatch.models.Track;
@@ -32,10 +35,9 @@ import retrofit2.Response;
 
 public class ArtistsActivity extends AppCompatActivity {
 
-    @BindView(R.id.locationTextView)
-    TextView mLocationTextView;
-    @BindView(R.id.listView)
-    ListView mListView;
+    @BindView(R.id.recyclerView)
+    RecyclerView mRecyclerView;
+    private TrackListAdapter mAdapter;
     @BindView(R.id.errorTextView)
     TextView mErrorTextView;
     @BindView(R.id.progressBar)
@@ -48,18 +50,18 @@ public class ArtistsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_artists);
         ButterKnife.bind(this);
 
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String Artists = ((TextView)view).getText().toString();
-                Log.d("ArtistsActivity.this", "ONITEMCLICK");
-                Toast.makeText(ArtistsActivity.this, Artists, Toast.LENGTH_LONG).show();
-            }
-        });
+//        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                String Artists = ((TextView)view).getText().toString();
+//                Log.d("ArtistsActivity.this", "ONITEMCLICK");
+//                Toast.makeText(ArtistsActivity.this, Artists, Toast.LENGTH_LONG).show();
+//            }
+//        });
 
         Intent intent = getIntent();
         String artist = intent.getStringExtra("artist");
-        mLocationTextView.setText("Here are the top ten songs of: " + artist);
+//        mLocationTextView.setText("Here are the top ten songs of: " + artist);
 
 
         MusicMatchApi client = MusicMatchClient.getClient();
@@ -74,9 +76,13 @@ public class ArtistsActivity extends AppCompatActivity {
                 if(response.isSuccessful()){
                     List<Track> tracks = response.body().getMessage().getBody().getTrackList();
                     Log.d(TAG, String.format("Track Size %d", tracks.size()));
-                    ArrayAdapter adapter
-                            = new ArtistsArrayAdapter(ArtistsActivity.this, android.R.layout.simple_list_item_1, tracks);
-                    mListView.setAdapter(adapter);
+                    mAdapter = new TrackListAdapter(ArtistsActivity.this, tracks);
+                    mRecyclerView.setAdapter(mAdapter);
+                    RecyclerView.LayoutManager layoutManager =
+                            new LinearLayoutManager(ArtistsActivity.this);
+                    mRecyclerView.setLayoutManager(layoutManager);
+                    mRecyclerView.setHasFixedSize(true);
+
                 }
                 else{
                     showFailureMessage();

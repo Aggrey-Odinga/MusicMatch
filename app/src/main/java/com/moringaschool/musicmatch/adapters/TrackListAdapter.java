@@ -1,6 +1,7 @@
 package com.moringaschool.musicmatch.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.moringaschool.musicmatch.R;
 import com.moringaschool.musicmatch.models.Track;
+import com.moringaschool.musicmatch.ui.ArtistDetailActivity;
+
+import org.parceler.Parcels;
 
 import java.util.List;
 
@@ -41,7 +45,7 @@ public class TrackListAdapter extends RecyclerView.Adapter<TrackListAdapter.Trac
     public int getItemCount() {
         return mTracks.size();
     }
-    public class TrackViewHolder extends RecyclerView.ViewHolder {
+    public class TrackViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener {
         @BindView(R.id.artistImageView)
         ImageView mArtistImageView;
         @BindView(R.id.artistNameTextView)
@@ -56,8 +60,16 @@ public class TrackListAdapter extends RecyclerView.Adapter<TrackListAdapter.Trac
             super(itemView);
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
+            itemView.setOnClickListener(this);
         }
-
+        @Override
+        public void onClick(View v) {
+            int itemPosition = getLayoutPosition();
+            Intent intent = new Intent(mContext, ArtistDetailActivity.class);
+            intent.putExtra("position", itemPosition);
+            intent.putExtra("tracks", Parcels.wrap(mTracks));
+            mContext.startActivity(intent);
+        }
         public void bindTrack(Track track) {
             mNameTextView.setText(track.getTrack().getArtistName());
             mTrackTextView.setText(track.getTrack().getTrackName());

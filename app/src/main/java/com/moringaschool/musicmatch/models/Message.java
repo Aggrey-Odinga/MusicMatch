@@ -7,7 +7,9 @@ import com.google.gson.annotations.SerializedName;
 import com.moringaschool.musicmatch.models.Body;
 import com.moringaschool.musicmatch.models.Header;
 
+import org.parceler.Parcel;
 
+@Parcel
 public class Message {
 
     @SerializedName("header")

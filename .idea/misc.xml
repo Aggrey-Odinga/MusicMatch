@@ -14,7 +14,7 @@
         <entry key="app/src/main/res/layout/activity_songs.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/activity_top_trending.xml" value="0.1" />
         <entry key="app/src/main/res/layout/artist_list_item.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/fragment_artist_detail.xml" value="0.27247191011235955" />
+        <entry key="app/src/main/res/layout/fragment_artist_detail.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_info.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.2625" />
       </map>

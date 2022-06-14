@@ -2,65 +2,64 @@ package com.moringaschool.musicmatch.ui;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.moringaschool.musicmatch.R;
+import com.moringaschool.musicmatch.models.Track;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ArtistDetailFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import org.parceler.Parcels;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class ArtistDetailFragment extends Fragment {
+    @BindView(R.id.trackImageView)
+    ImageView mImageLabel;
+    @BindView(R.id.artistNameTextView)
+    TextView mNameLabel;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private Track mTrack;
 
     public ArtistDetailFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ArtistDetailFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ArtistDetailFragment newInstance(String param1, String param2) {
-        ArtistDetailFragment fragment = new ArtistDetailFragment();
+
+    public static ArtistDetailFragment newInstance(Track artist) {
+        ArtistDetailFragment artistDetailFragment = new ArtistDetailFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+        args.putParcelable("artist", Parcels.wrap(artist));
+        artistDetailFragment.setArguments(args);
+        return artistDetailFragment;
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        assert getArguments() != null;
+        mTrack = Parcels.unwrap(getArguments().getParcelable("artist"));
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_artist_detail, container, false);
+
+        View view =  inflater.inflate(R.layout.fragment_artist_detail, container, false);
+        ButterKnife.bind(this, view);
+
+        mNameLabel.setText(mTrack.getTrack().getTrackName());
+
+        return view;
     }
 }

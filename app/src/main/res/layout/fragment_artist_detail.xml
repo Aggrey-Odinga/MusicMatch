@@ -9,12 +9,12 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white">
+        android:background="#FC000000">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="180dp"
-            android:id="@+id/restaurantImageView"
+            android:id="@+id/trackImageView"
             android:src="@drawable/fragmentbg2"
             android:scaleType="centerCrop" />
         <RelativeLayout
@@ -27,54 +27,75 @@
             android:paddingBottom="20dp">
 
             <TextView
+                android:id="@+id/artistNameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Track Name"
-                android:id="@+id/trackNameTextView"
-                android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:text="Artist Name"
+                android:textColor="@color/black"
                 android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4.5/5"
+                android:id="@+id/ratingTextView"
+                android:layout_alignTop="@+id/artistNameTextView"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
-
+            <TextView
+                android:id="@+id/trackTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/artistNameTextView"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:text="Track name"
+                android:textColor="@color/black"
+                android:textStyle="italic" />
 
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
             <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_above="@+id/saveSongButton"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:orientation="vertical"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_above="@+id/saveTrackButton"
                 android:paddingLeft="30dp"
                 android:paddingTop="20dp"
                 android:paddingRight="30dp">
-
                 <TextView
-                    android:id="@+id/artistTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:text="Twitter"
+                    android:id="@+id/websiteTextView"
                     android:drawableLeft="@drawable/ic_baseline_music_note_24"
                     android:drawablePadding="4dp"
-                    android:gravity="center"
-                    android:textColor="@color/purple_200"
+                    android:textColor="#C4EA3A55"
                     android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center" />
+
+
             </LinearLayout>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Save Track"
-                android:id="@+id/saveSongButton"
+                android:id="@+id/saveTrackButton"
                 android:layout_alignParentBottom="true"
                 android:background="@color/teal_700"
                 android:textColor="@color/white"

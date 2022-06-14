@@ -16,7 +16,7 @@
         android:theme="@style/Theme.MusicMatch"
         tools:targetApi="31">
         <activity
-            android:name=".SavedTrackListActivity"
+            android:name=".ui.SavedTrackListActivity"
             android:exported="false" />
         <activity
             android:name=".ui.ArtistDetailActivity"

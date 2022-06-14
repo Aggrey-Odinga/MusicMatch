@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText martistEditText;
     @BindView(R.id.buttontoptenartists)
     Button mButtontoptenartists;
-
-
+    @BindView(R.id.savedSongbtn)
+    Button mSavedTracksButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ButterKnife.bind(this);
 
         mButtontoptenartists.setOnClickListener(this);
+        mSavedTracksButton.setOnClickListener(this);
     }
 
     @Override
@@ -70,6 +71,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             saveArtistToFirebase(artist);
             Intent intent = new Intent(MainActivity.this, ArtistsListActivity.class);
             intent.putExtra("artist", artist);
+            startActivity(intent);
+        }
+        if (v == mSavedTracksButton){
+            Intent intent = new Intent(MainActivity.this, SavedTrackListActivity.class);
             startActivity(intent);
         }
     }

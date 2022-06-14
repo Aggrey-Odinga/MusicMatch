@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.RegisterActivity"
-    android:background="@drawable/loginbg">
+    android:background="@drawable/newbg">
 
     <View
         android:layout_width="match_parent"

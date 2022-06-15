@@ -1,5 +1,7 @@
 package com.moringaschool.musicmatch.ui;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -34,8 +36,15 @@ public class ArtistDetailFragment extends Fragment implements View.OnClickListen
     ImageView mImageLabel;
     @BindView(R.id.artistNameTextView)
     TextView mNameLabel;
+    @BindView(R.id.trackTextView)
+    TextView mArtistTextView;
     @BindView(R.id.saveTrackButton)
     Button  mSaveTrackButton;
+    @BindView(R.id.albumTextView2)
+    TextView mAlbumTextView;
+    @BindView(R.id.websiteTextView)
+    TextView mWebsiteTextView;
+
 
     private Track mTrack;
 
@@ -65,12 +74,13 @@ public class ArtistDetailFragment extends Fragment implements View.OnClickListen
         ButterKnife.bind(this, view);
 
         mNameLabel.setText(mTrack.getTrack().getTrackName());
-
+        mArtistTextView.setText(mTrack.getTrack().getArtistName());
+        mAlbumTextView.setOnClickListener(this);
+        mWebsiteTextView.setOnClickListener(this);
         mSaveTrackButton.setOnClickListener(this);
 
         return view;
     }
-
     @Override
     public void onClick(View view) {
         if (view == mSaveTrackButton) {
@@ -86,6 +96,16 @@ public class ArtistDetailFragment extends Fragment implements View.OnClickListen
             mTrack.setPushId(pushId);
             pushRef.setValue(mTrack);
             Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
+        }
+        if(view == mAlbumTextView){
+            Intent webIntent = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse(mTrack.getTrack().getTrackShareUrl()));
+            startActivity(webIntent);
+        }
+        if(view == mWebsiteTextView){
+            Intent webIntent = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse(mTrack.getTrack().getTrackEditUrl()));
+            startActivity(webIntent);
         }
     }
 

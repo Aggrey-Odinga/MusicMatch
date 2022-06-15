@@ -9,22 +9,29 @@ import android.widget.TextView;
 
 import com.moringaschool.musicmatch.R;
 
-public class LoginActivity extends AppCompatActivity {
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
-    TextView createnewAccount;
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
+
+    @BindView(R.id.createNewAccount)
+    TextView mCreateTextView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        createnewAccount= findViewById(R.id.createNewAccount);
 
+        ButterKnife.bind(this);
+        mCreateTextView.setOnClickListener(this);
 
-        createnewAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
-            }
-        });
+    }
+    @Override
+    public void onClick(View view) {
+        if (view ==  mCreateTextView) {
+            Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+            startActivity(intent);
+        }
     }
 }

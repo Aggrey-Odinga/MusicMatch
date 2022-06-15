@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.moringaschool.musicmatch.R;
@@ -72,10 +74,17 @@ public class ArtistDetailFragment extends Fragment implements View.OnClickListen
     @Override
     public void onClick(View view) {
         if (view == mSaveTrackButton) {
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            String uid = user.getUid();
             DatabaseReference trackRef = FirebaseDatabase
                     .getInstance()
-                    .getReference(Constants.FIREBASE_CHILD_TRACKS);
-            trackRef.push().setValue(mTrack);
+                    .getReference(Constants.FIREBASE_CHILD_TRACKS)
+                    .child(uid);
+
+            DatabaseReference pushRef = trackRef.push();
+            String pushId = pushRef.getKey();
+            mTrack.setPushId(pushId);
+            pushRef.setValue(mTrack);
             Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
         }
     }

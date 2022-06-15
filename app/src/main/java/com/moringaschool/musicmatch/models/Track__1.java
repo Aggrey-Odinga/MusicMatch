@@ -72,7 +72,9 @@ public class Track__1 {
     @SerializedName("primary_genres")
     @Expose
     private PrimaryGenres primaryGenres;
-
+    @SerializedName("pushId")
+    @Expose
+    private String pushId;
     /**
      * No args constructor for use in serialization
      * 
@@ -285,6 +287,13 @@ public class Track__1 {
 
     public void setPrimaryGenres(PrimaryGenres primaryGenres) {
         this.primaryGenres = primaryGenres;
+    }
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
     }
 
 }

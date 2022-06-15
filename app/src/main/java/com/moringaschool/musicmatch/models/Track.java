@@ -14,6 +14,7 @@ public class Track {
     @Expose
     private Track__1 track;
 
+    private String pushId;
     /**
      * No args constructor for use in serialization
      * 
@@ -36,6 +37,13 @@ public class Track {
 
     public void setTrack(Track__1 track) {
         this.track = track;
+    }
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
     }
 
 }

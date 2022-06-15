@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.moringaschool.musicmatch.R;
@@ -41,10 +43,11 @@ public class SavedTrackListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_artists);
         ButterKnife.bind(this);
 
-        mTrackReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_TRACKS);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = user.getUid();
+        mTrackReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_TRACKS).child(uid);
         setUpFirebaseAdapter();
         hideProgressBar();
-        showRestaurants();
     }
 
     private void setUpFirebaseAdapter(){

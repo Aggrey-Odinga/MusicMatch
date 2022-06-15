@@ -39,7 +39,7 @@
                 app:layout_constraintVertical_bias="0.088" />
 
             <EditText
-                android:id="@+id/inputemail"
+                android:id="@+id/emailEditText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -64,7 +64,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
             <EditText
-                android:id="@+id/inputpassword"
+                android:id="@+id/passwordEditText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
@@ -81,22 +81,22 @@
                 android:paddingBottom="13dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
-                app:layout_constraintEnd_toEndOf="@+id/inputemail"
-                app:layout_constraintStart_toStartOf="@+id/inputemail"
-                app:layout_constraintTop_toBottomOf="@+id/inputemail" />
+                app:layout_constraintEnd_toEndOf="@+id/emailEditText"
+                app:layout_constraintStart_toStartOf="@+id/emailEditText"
+                app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
 
             <Button
-                android:id="@+id/btnlogin"
+                android:id="@+id/passwordLoginButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/input_bg"
                 android:text="Login"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/inputpassword"
+                app:layout_constraintEnd_toEndOf="@+id/passwordEditText"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/inputpassword"
-                app:layout_constraintTop_toBottomOf="@+id/inputpassword"
+                app:layout_constraintStart_toStartOf="@+id/passwordEditText"
+                app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
                 app:layout_constraintVertical_bias="0.155" />
 
             <TextView
@@ -107,9 +107,9 @@
                 android:text="Create New Account"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@+id/btnlogin"
-                app:layout_constraintStart_toStartOf="@+id/btnlogin"
-                app:layout_constraintTop_toBottomOf="@+id/btnlogin" />
+                app:layout_constraintEnd_toEndOf="@+id/passwordLoginButton"
+                app:layout_constraintStart_toStartOf="@+id/passwordLoginButton"
+                app:layout_constraintTop_toBottomOf="@+id/passwordLoginButton" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

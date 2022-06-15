@@ -17,6 +17,7 @@
         <entry key="app/src/main/res/layout/fragment_artist_detail.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_info.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.2625" />
+        <entry key="app/src/main/res/menu/menu_main.xml" value="0.1" />
       </map>
     </option>
   </component>

@@ -36,14 +36,14 @@
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.12" />
+                app:layout_constraintVertical_bias="0.088" />
 
             <EditText
                 android:id="@+id/inputemail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="92dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/input_bg"
                 android:drawableLeft="@drawable/ic_baseline_email_24"
@@ -57,8 +57,9 @@
                 android:paddingBottom="13dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
+                android:textStyle="italic"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -72,6 +73,7 @@
                 android:drawablePadding="10dp"
                 android:ems="10"
                 android:hint="Password"
+                android:textStyle="italic"
                 android:inputType="textPassword"
                 android:paddingLeft="20dp"
                 android:paddingTop="13dp"
@@ -83,28 +85,19 @@
                 app:layout_constraintStart_toStartOf="@+id/inputemail"
                 app:layout_constraintTop_toBottomOf="@+id/inputemail" />
 
-            <TextView
-                android:id="@+id/forgotpassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:text="Forgot Password"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@+id/inputpassword"
-                app:layout_constraintTop_toBottomOf="@+id/inputpassword" />
-
             <Button
                 android:id="@+id/btnlogin"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:background="@drawable/input_bg"
                 android:text="Login"
                 android:textColor="@color/white"
-                android:background="@drawable/input_bg"
-                app:layout_constraintEnd_toEndOf="@+id/forgotpassword"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/inputpassword"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/inputpassword"
-                app:layout_constraintTop_toBottomOf="@+id/forgotpassword" />
+                app:layout_constraintTop_toBottomOf="@+id/inputpassword"
+                app:layout_constraintVertical_bias="0.155" />
 
             <TextView
                 android:id="@+id/createNewAccount"

@@ -7,7 +7,9 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.moringaschool.musicmatch.models.PrimaryGenres;
 
+import org.parceler.Parcel;
 
+@Parcel
 public class Track__1 {
 
     @SerializedName("track_id")
@@ -16,9 +18,9 @@ public class Track__1 {
     @SerializedName("track_name")
     @Expose
     private String trackName;
-    @SerializedName("track_name_translation_list")
-    @Expose
-    private List<Object> trackNameTranslationList = null;
+//    @SerializedName("track_name_translation_list")
+//    @Expose
+//    private List<Object> trackNameTranslationList = null;
     @SerializedName("track_rating")
     @Expose
     private Integer trackRating;
@@ -70,7 +72,9 @@ public class Track__1 {
     @SerializedName("primary_genres")
     @Expose
     private PrimaryGenres primaryGenres;
-
+    @SerializedName("pushId")
+    @Expose
+    private String pushId;
     /**
      * No args constructor for use in serialization
      * 
@@ -105,7 +109,7 @@ public class Track__1 {
         super();
         this.trackId = trackId;
         this.trackName = trackName;
-        this.trackNameTranslationList = trackNameTranslationList;
+//        this.trackNameTranslationList = trackNameTranslationList;
         this.trackRating = trackRating;
         this.commontrackId = commontrackId;
         this.instrumental = instrumental;
@@ -141,13 +145,13 @@ public class Track__1 {
         this.trackName = trackName;
     }
 
-    public List<Object> getTrackNameTranslationList() {
-        return trackNameTranslationList;
-    }
+//    public List<Object> getTrackNameTranslationList() {
+//        return trackNameTranslationList;
+//    }
 
-    public void setTrackNameTranslationList(List<Object> trackNameTranslationList) {
-        this.trackNameTranslationList = trackNameTranslationList;
-    }
+//    public void setTrackNameTranslationList(List<Object> trackNameTranslationList) {
+//        this.trackNameTranslationList = trackNameTranslationList;
+//    }
 
     public Integer getTrackRating() {
         return trackRating;
@@ -283,6 +287,13 @@ public class Track__1 {
 
     public void setPrimaryGenres(PrimaryGenres primaryGenres) {
         this.primaryGenres = primaryGenres;
+    }
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
     }
 
 }

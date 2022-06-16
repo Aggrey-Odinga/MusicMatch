@@ -7,7 +7,9 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.moringaschool.musicmatch.models.MusicGenre;
 
+import org.parceler.Parcel;
 
+@Parcel
 public class PrimaryGenres {
 
     @SerializedName("music_genre_list")

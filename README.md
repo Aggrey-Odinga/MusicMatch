@@ -15,8 +15,8 @@ It also enables user to search for song lyrics of the song that they love.
 ## Project Set Up Instructions
 
 To set up this project:
-- Clone the repository link.
-- Navigate into the musicmatch directory
+- Clone the repository link (https://github.com/Aggrey-Odinga/MusicMatch).
+- Navigate into the musicmatch directory in your android studio.
 - Open the project in your favorite IDE.
 
 ## Technologies Used:
